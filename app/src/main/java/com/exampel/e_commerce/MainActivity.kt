@@ -12,7 +12,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var recyclerview : RecyclerView
+    lateinit var recyclerview: RecyclerView
 
     var myarraylist = ArrayList<Pclass>()
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 var products = job.getJSONArray("products")
 
 
-                for (i in 0 until  products.length()) {
+                for (i in 0 until products.length()) {
                     var job = products.getJSONObject(i)
 
                     var name = job.getString("title")
@@ -51,12 +51,12 @@ class MainActivity : AppCompatActivity() {
                     Log.e("===price", "onCreate: $price")
                     Log.e("===price", "onCreate: $image")
 
-                    var data = Pclass(name,image,price)
+                    var data = Pclass(name, image, price)
                     myarraylist.add(data)
 
                 }
 
-                var myrecycler = MyRecycler(this@MainActivity,myarraylist)
+                var myrecycler = MyRecycler(this@MainActivity, myarraylist)
                 recyclerview.adapter = myrecycler
 
             },
