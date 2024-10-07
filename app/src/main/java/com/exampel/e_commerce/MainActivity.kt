@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
                     var data = Pclass(name, image, price)
                     myarraylist.add(data)
-
                 }
 
                 var myrecycler = MyRecycler(this@MainActivity, myarraylist)

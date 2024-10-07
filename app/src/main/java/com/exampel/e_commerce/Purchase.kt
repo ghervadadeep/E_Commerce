@@ -23,16 +23,12 @@ class Purchase : AppCompatActivity() {
         purchaseprice = findViewById(R.id.purchaseprice)
         purchasebutton = findViewById(R.id.purchasebutton)
 
-
         var gettitle = intent.getStringExtra("title")
         var getprice = intent.getStringExtra("price")
         var getimage = intent.getStringExtra("image")
 
-
         Glide.with(this@Purchase).load(getimage).into(purchaseimage);
         purchasetitle.setText(gettitle)
         purchaseprice.setText("$ ${getprice}")
-
-
     }
 }

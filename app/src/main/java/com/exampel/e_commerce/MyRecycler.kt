@@ -17,7 +17,6 @@ class MyRecycler(var mainActivity: MainActivity, var data: ArrayList<Pclass>) :
         var title: TextView = itemView.findViewById(R.id.title)
         var price: TextView = itemView.findViewById(R.id.price)
         var layout: ConstraintLayout = itemView.findViewById(R.id.layout)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myclass {
@@ -31,7 +30,7 @@ class MyRecycler(var mainActivity: MainActivity, var data: ArrayList<Pclass>) :
     override fun onBindViewHolder(holder: myclass, position: Int) {
         holder.price.text = "$ ${data.get(position).price}"
         holder.title.text = data.get(position).name
-//        holder.price.text = data.get(position).price
+//      holder.price.text = data.get(position).price
         Glide.with(mainActivity).load(data.get(position).image).into(holder.image);
 
         holder.layout.setOnClickListener { v ->
