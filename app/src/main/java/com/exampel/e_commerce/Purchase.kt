@@ -1,5 +1,6 @@
 package com.exampel.e_commerce
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -30,5 +31,10 @@ class Purchase : AppCompatActivity() {
         Glide.with(this@Purchase).load(getimage).into(purchaseimage);
         purchasetitle.setText(gettitle)
         purchaseprice.setText("$ ${getprice}")
+
+        purchasebutton.setOnClickListener{
+            var intent = Intent(this@Purchase,PaymentActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

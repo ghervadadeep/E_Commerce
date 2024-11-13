@@ -31,10 +31,9 @@ class MainActivity : AppCompatActivity() {
         val queue = Volley.newRequestQueue(this)
         val url = "https://dummyjson.com/products"
 
-// Request a string response from the provided URL.
-        val stringRequest = StringRequest(
-            Request.Method.GET, url,
-            Response.Listener<String> { response ->
+        // Request a string response from the provided URL.
+        val stringRequest =
+            StringRequest(Request.Method.GET, url, Response.Listener<String> { response ->
                 Log.e("====", "onCreate: $response")
                 var job = JSONObject(response)
                 var products = job.getJSONArray("products")
@@ -47,6 +46,15 @@ class MainActivity : AppCompatActivity() {
                     var price = job.getString("price")
                     var image = job.getString("thumbnail")
 
+                    var reviewww = job.getJSONArray("reviews")
+
+                    for (j in 0 until reviewww.length()) {
+                        var review = reviewww.getJSONObject(j)
+
+                        var rating = review.getInt("rating")
+
+                        Log.e("===rating", "callapi: $rating")
+                    }
                     Log.e("===title", "onCreate: $name")
                     Log.e("===price", "onCreate: $price")
                     Log.e("===price", "onCreate: $image")
@@ -58,13 +66,13 @@ class MainActivity : AppCompatActivity() {
                 var myrecycler = MyRecycler(this@MainActivity, myarraylist)
                 recyclerview.adapter = myrecycler
 
-            },
-            {
+            }, {
                 Log.e("error====", "onCreate: ${it.localizedMessage}")
             })
 
+        // rzp_test_FauRyEXC99jjoR
+
         // Add the request to the RequestQueue.
         queue.add(stringRequest)
-
     }
 }

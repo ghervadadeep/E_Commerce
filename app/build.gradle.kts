@@ -46,9 +46,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.volley)
 
+//    implementation('com.razorpay:checkout:1.6.20')
 
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.razorpay:checkout:1.6.20")
 
 
 }

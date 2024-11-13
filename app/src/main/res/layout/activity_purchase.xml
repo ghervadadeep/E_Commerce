@@ -17,16 +17,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/purchasetitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="5dp"
-        android:text="Title : "
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseimage" />
+    android:id="@+id/purchasetitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="5dp"
+    android:text="Title : "
+    android:textColor="@color/black"
+    android:textSize="20dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/purchaseimage" />
 
     <TextView
         android:id="@+id/purchaseprice"
